@@ -56,47 +56,22 @@
             </p>
         </small>
 
+
+        <small>
+            
+            <!--s.coveney@sheffield.ac.uk</br> -->
+            <p>
+                    Oct 2011 - Feb 2015</br>
+                    Theoretical Physics PhD | GPU simulations of polymer films</br>
+                    Department of Physics and Astronomy &middot; University of Sheffield
+            </p>
+        </small>
+
     </section>
     <!--}}}-->
 
-    <!--{{{ Research Journey - Theoretical Physics
-    <section>
-        <h3>Theoretical Physics PhD</h3>
-           
-        <p>Simulation of phase separation of polymer blend films.</p>
-        <p>I wrote my simulations in C++/CUDA to utilize a GPU.</p>
-
-        <figure>
-            <img style="margin: 0; width: 40%; height: auto;" src="figures/polymer.png">
-        </figure>
-
-    </section>
-    }}}-->
-
-    <!--{{{ Outline
-    <section>
-        <h3>Outline</h3>
-           
-        <ol>
-            <li>Emulation of expensive simulations</li>
-            <li>Random fields on manifolds
-                <ul>
-                    <li>Electrical activation on left atria</li>
-                    <li>Gaussian processes on manifolds</li>
-                </ul>
-            </li>
-            <li>Cardiac Diffusion Tensor Imaging</li>
-        </ol>
-
-    <p>
-        <br>
-        (Work not necessarily performed in this order)
-    </p>
-
-    </section>
-    -->
-
 </section>
+
 <!--}}}-->
 
 
@@ -188,20 +163,58 @@
     </section>
     <!--}}}-->
 
+    <!--{{{ ERP surrogate + Latent GPs -->
+    <section>
+        <h3>Latent Gaussian processes on atrial manifolds</h3>
+
+        <small>
+            Emulators + GP priors on parameters: simulation-free inference with UQ
+        </small>
+
+        <figure>
+            <img style="margin: 0; width: 45%; height: auto" src="figures/ERP_flowchart.png">
+            <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
+        </figure>
+
+    </section>
+    <!--}}}-->
+
 </section>
 <!--}}}-->
 
 
-<!--{{{ LAT uncertainty -->
+<!--{{{ Random Fields on Manifolds -->
 <section>
 
     <!--{{{ LAT maps: intro-->
     <section>
         <h2>Random fields on Manifolds</h2>
 
-        <h4>Part 1</h4>
-
         <p>Mapping electrical activation in the left atrium</p>
+
+    </section>
+    <!--}}}-->
+
+    <!--{{{ EGMs + mesh: measurements-->
+    <section>
+        <h3>Uncertain observations on left atrium</h3>
+
+        <p>
+            <!--
+            Measure electrograms (voltage-time) in left atrium
+            <br>
+            -->
+            Local Activation Time (LAT)
+            <br>
+            (time of arrival of electrical wavefront)
+        </p>
+
+        <figure>
+            <img style="margin: 0; width: 80%; height: auto" src="figures/egm+mesh.png">
+            <!--
+            <figcaption style="line-height: 1.0; font-size: 0.75em" >Measure <b>electrograms</b> (voltage vs. time) across the left atrium</br>Determine <b>Local Activation Time (LAT)</b></figcaption>
+            -->
+        </figure>
 
     </section>
     <!--}}}-->
@@ -256,83 +269,6 @@
     </section>
     <!--}}}-->
 
-    <!--{{{ EGMs + mesh: measurements-->
-    <section>
-        <h3>Uncertain observations on left atrium</h3>
-
-        <p>
-            <!--
-            Measure electrograms (voltage-time) in left atrium
-            <br>
-            -->
-            Local Activation Time (LAT)
-            <br>
-            (time of arrival of electrical wavefront)
-        </p>
-
-        <figure>
-            <img style="margin: 0; width: 80%; height: auto" src="figures/egm+mesh.png">
-            <!--
-            <figcaption style="line-height: 1.0; font-size: 0.75em" >Measure <b>electrograms</b> (voltage vs. time) across the left atrium</br>Determine <b>Local Activation Time (LAT)</b></figcaption>
-            -->
-        </figure>
-
-    </section>
-    <!--}}}-->
-
-    <!--{{{ Electrogram analysis summary gif
-    <section>
-        <h3>LAT Uncertainty</h3>
-    
-        <p>
-            Method to assign error variance for LAT
-        </p>
-
-        <figure>
-            <img style="margin: 0; width: 100%; height: auto" src="figures/egmResult.gif">
-        </figure>
-
-    </section>
-    }}}-->
-
-    <!--{{{ Not on mesh
-    <section>
-        <h3>Position uncertainty</h3>
-
-        <p>
-            Asign measurements to finite element model
-            <br>
-            Larger projections have larger uncertainties
-        </p>
-
-        <figure>
-            <img style="margin: 0; width: 50%; height: auto" src="figures/meshProject.png">
-            <figcaption style="line-height: 1.0; font-size: 0.75em" >Project observations to nearest mesh vertex</figcaption>
-        </figure>
-
-    </section>
-    }}}-->
-
-    <!--{{{ combine UQs
-    <section>
-        <h3>Combine Errors</h3>
-
-        <div>
-            \[\begin{equation}
-                LAT_{obs} = LAT_{true} + \epsilon \\
-                \epsilon \sim \mathcal{N}(0, \sigma^2) \\
-                \sigma^2 = \sigma_{electrogram}^2 + \sigma_{position}^2 
-            \end{equation}\]
-        </div>
-
-        <figure>
-            <img style="margin: 0; width: 25%; height: auto" src="figures/meshgif1.png">
-            <figcaption style="line-height: 1.0; font-size: 0.75em" >Uncertain LATs assigned to mesh</figcaption>
-        </figure>
-
-    </section>
-    }}}-->
-
     <!--{{{ Bayesian model paper -->
     <section>
         <h3>Posterior distribution of Local Activation Time</h3>
@@ -342,24 +278,6 @@
             <img style="margin: 0; width: 38%; height: auto; float: center" src="figures/sigmaAll.png">
             <figcaption style="line-height: 0.75; font-size: 0.75em" >Color = observation value; Size = observation uncertainty</figcaption>
         </figure>
-
-    </section>
-    <!--}}}-->
-
-</section>
-<!---}}}-->
-
-
-<!--{{{ Gaussian process manifold interpolation -->
-<section>
-
-    <!--{{{ intro what we want interpolation to do -->
-    <section>
-        <h2>Random fields on manifolds</h2>
-
-        <h4>Part 2</h4>
-
-        <p>Gaussian process kernels on manifolds</p>
 
     </section>
     <!--}}}-->
@@ -423,30 +341,6 @@
     </section>
     <!--}}}-->
 
-    <!--{{{ Extension -->
-    <section>
-        <h3>Move the boundary conditions</h3>
-
-        <figure>
-            <img style="margin: 0; width: 60%; height: auto" src="figures/extension_small.png">
-            <figcaption style="line-height: 1.0; font-size: 0.75em" >Custom remeshing tools to extend mesh</figcaption>
-        </figure>
-
-    </section>
-    <!--}}}-->
-
-    <!--{{{ Remesh -->
-    <section>
-        <h3>Automatically remesh</h3>
-
-        <figure>
-            <img style="margin: 0; width: 60%; height: auto" src="figures/annealed_decimation.png">
-            <figcaption style="line-height: 1.0; font-size: 0.75em" >Custom remeshing tools to reduce mesh</figcaption>
-        </figure>
-
-    </section>
-    <!--}}}-->
-
     <!--{{{ LAT plots -->
     <section>
         <h3>Posterior distrib. of function + gradient</h3>
@@ -464,22 +358,6 @@
     </section>
     <!--}}}-->
 
-    <!--{{{ ERP surrogate + Latent GPs -->
-    <section>
-        <h3>Latent Gaussian processes on atrial manifolds</h3>
-
-        <small>
-            Emulators + GP priors on parameters: simulation-free inference with UQ
-        </small>
-
-        <figure>
-            <img style="margin: 0; width: 45%; height: auto" src="figures/ERP_flowchart.png">
-            <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
-        </figure>
-
-    </section>
-    <!--}}}-->
-
 </section>
 <!--}}}-->
 
@@ -487,11 +365,40 @@
 <!--{{{ Cardiac diffusion tensor imaging -->
 <section>
 
-    <!--{{{ intro what we want interpolation to do -->
+    <!--{{{ Cardiac diffusion tensor imaging title slide -->
     <section>
         <h2>Cardiac diffusion tensor imaging</h2>
 
         <p>Investigating cardiac tissue structure with MRI</p>
+
+    </section>
+    <!--}}}-->
+
+    <!--{{{ DTI maths -->
+    <section>
+        <h3>Diffusion Tensor Imaging (DTI) maths</h3>
+
+        <p>Model measured (noisy) signal $y_i$ as:</p>
+
+        <div>
+        \[\begin{gather}
+          y_i = S_0 \exp{\left( -b_i \mathbf{g_i} \mathbf{D} \mathbf{g_i}^T \right)} + \epsilon_i
+        \end{gather}\]
+        </div>
+
+        <p>$b_i$ (scalar): diffusion gradient strength</p>
+        <p>$\mathbf{g_i}$: (vector) : diffusion gradient direction</p>
+        <p>$\mathbf{D}$: ($3 \times 3$ tensor) : diffusion tensor</p>
+
+        <p>Task: estimate $\mathbf{D}$ (and $S_0$)</p>
+
+        <!--
+        <div>
+        \[\begin{gather}
+          \hat{\theta} = \text{argmin} \sum_{i=1}^N \left( \frac{\sigma^2}{\left(\sigma^2 + r_i^2\right)^2} \right)^2 r_i^2
+        \end{gather}\]
+        </div>
+        -->
 
     </section>
     <!--}}}-->
@@ -508,6 +415,31 @@
     </section>
     <!--}}}-->
 
+    <!--{{{ M-estimators -->
+    <section>
+        <h3>Robust fitting for outlier detection</h3>
+
+        <p>Replace sum-of-squares with M-estimator</p>
+
+        <div>
+        \[\begin{gather}
+          \hat{\theta} = \text{argmin} \sum_{i=1}^N r_i^2  \longrightarrow \hat{\theta} = \text{argmin} \sum_{i=1}^N \rho(r_i)
+        \end{gather}\]
+        </div>
+
+        <p>Less sensitive to outlier signals</p>
+
+        <!--
+        <div>
+        \[\begin{gather}
+          \hat{\theta} = \text{argmin} \sum_{i=1}^N \left( \frac{\sigma^2}{\left(\sigma^2 + r_i^2\right)^2} \right)^2 r_i^2
+        \end{gather}\]
+        </div>
+        -->
+
+    </section>
+    <!--}}}-->
+
     <!--{{{ Shot rejection -->
     <section>
         <h3>Robust fitting for outlier detection</h3>
@@ -520,29 +452,70 @@
     </section>
     <!--}}}-->
 
-    <!--{{{ RCWLS -->
+    <!--{{{ robust vs non-robust HA maps-->
     <section>
-        <h3>Robust and Constrained fitting methods</h3>
+        <h3>Comparing fitting methods</h3>
 
         <figure>
-            <img style="margin: 0; width: 60%; height: auto" src="figures/RCWLS_example.png">
+            <img style="margin: 0; width: 40%; height: auto" src="figures/HA_robust.png">
             <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
         </figure>
 
     </section>
     <!--}}}-->
 
-    <!--{{{ optimal CDTI design
+    <!--{{{ DKI maths -->
+    <section>
+        <h3>Diffusion Kurtosis Imaging (DKI) maths</h3>
+
+        <div>
+        \begin{split}    
+    \ln{S(\mathbf{q})} &= \ln{S_0} - \sum_{i = 1}^3 \sum_{j=1}^3 q_i q_j D_{ij} \\
+    &+ \frac{1}{6} \bar{D}^2 \sum_{i = 1}^3 \sum_{j=1}^3 \sum_{k = 1}^3 \sum_{l=1}^3 q_i q_j q_k q_l W_{ijkl}
+\end{split}
+        </div>
+
+        <p>$\mathbf{q}$: scaled diffusion gradient vector</p>
+        <p>$\mathbf{D}$: diffusion tensor | $\mathbf{W}$: kurtosis tensor</p>
+
+    </section>
+    <!--}}}-->
+
+    <!--{{{ RCWLS maths -->
+    <section>
+        <h3>Robust and Constrained fitting methods</h3>
+
+        <figure>
+            <img style="margin: 0; width: 45%; height: auto" src="figures/constraints.png">
+            <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
+        </figure>
+
+    </section>
+    <!--}}}-->
+
+    <!--{{{ RCWLS maps -->
+    <section>
+        <h3>Robust and Constrained fitting methods</h3>
+
+        <figure>
+            <img style="margin: 0; width: 65%; height: auto" src="figures/RCWLS_example.png">
+            <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
+        </figure>
+
+    </section>
+    <!--}}}-->
+
+    <!--{{{ optimal CDTI design -->
     <section>
         <h3>Bias and Variance of CDTI parameter estimation</h3>
 
         <figure>
             <img style="margin: 0; width: 40%; height: auto" src="figures/design_cdti.png">
-            <figcaption style="line-height: 1.0; font-size: 0.75em">Scan time $\sim$ acquistion design</figcaption>
+            <figcaption style="line-height: 1.0; font-size: 0.75em">Scan time relates to  acquistion design</figcaption>
         </figure>
 
     </section>
-    }}}-->
+    <!--}}}-->
 
     <!--{{{ UQ CDTI -->
     <section>
@@ -556,6 +529,19 @@
     </section>
     <!--}}}-->
 
+    <!--{{{ uncertainty weighted summary stats -->
+    <section>
+        <h3>UQ in CDTI - improving specificity</h3>
+
+        <figure>
+            <img style="margin: 0; width: 40%; height: auto" src="figures/fa.png">
+            <img style="margin: 0; width: 40%; height: auto" src="figures/e2a.png">
+            <figcaption style="line-height: 1.0; font-size: 0.75em">Uncertainty Weighted Summary Statistics are better</figcaption>
+        </figure>
+
+    </section>
+    <!--}}}-->
+
 </section>
 <!--}}}-->
 
@@ -563,9 +549,8 @@
 <!--{{{ Deep-learning -->
 <section>
 
-    <!--{{{ Why have I applied -->
     <section>
-        <h2>Familiarity with deep-learning</h2>
+        <h2>Interest in Deep Learning</h2>
 
         <small>
         <p style='text-align: left'>Reviewed papers on Deep-Learning:</p>
@@ -584,7 +569,6 @@
         </small>
 
     </section>
-    <!--}}}-->
 
 </section>
 <!--}}}-->
@@ -595,27 +579,14 @@
 
     <!--{{{ Why have I applied -->
     <section>
-        <h2>Conclusion</h2>
-
-        <p style='text-align: left'>I can offer many relevant skills</p>
-        <ul>
-            <li>Electrophysiology simulations</li>
-            <li>Emulation / surrogate modeling</li>
-            <li>Parameter fields on manifolds</li>
-            <li>Uncertainty quantification</li>
-        </ul>
-
-        <p style='text-align: left'>I particularly want to learn about</p>
-        <ul>
-            <li>Deep learning approaches to emulation</li>
-        </ul>
-
+        <h2>Thanks for listening</h2>
 
     </section>
     <!--}}}-->
 
 </section>
 <!--}}}-->
+
 
 
 <!-- {{{ revealjs - settings after -->
