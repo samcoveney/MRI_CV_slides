@@ -82,9 +82,9 @@
     <section>
         <h2>Emulators / Surrogate Models</h2>
 
-        <p>Learn mappings from simulator inputs to outputs</p>
+        <p>Simulator: input parameters $\rightarrow$ outputs</p>
 
-        <p>Applied to cardiac electrophysiology simulations</p>
+        <p>Emulator (fast) $\approx$ Simulator (slow)</p>
 
     </section>
     <!--}}}-->
@@ -151,29 +151,11 @@
 
         <p>
             Investigate parameter identifiability with emulators
-            <br>
-            More on these ERP emulators later...
         </p>
 
         <figure>
             <img style="margin: 0; width: 50%; height: auto; float: left" src="figures/ERP_sensitivity.png">
             <img style="margin: 0; width: 48%; height: auto; float: right" src="figures/ERP_surrogates.png">
-        </figure>
-
-    </section>
-    <!--}}}-->
-
-    <!--{{{ ERP surrogate + Latent GPs -->
-    <section>
-        <h3>Latent Gaussian processes on atrial manifolds</h3>
-
-        <small>
-            Emulators + GP priors on parameters: simulation-free inference with UQ
-        </small>
-
-        <figure>
-            <img style="margin: 0; width: 45%; height: auto" src="figures/ERP_flowchart.png">
-            <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
         </figure>
 
     </section>
@@ -244,7 +226,7 @@
 
         <div>
         \[\begin{gather}
-          y_i | \mu_i, \sigma_i, \tau  \sim  \mathcal{N}(y_i | \mu_i, \sigma_i^2/\tau) , \quad i = 1 ,\cdots, N  \label{eq:BayesModelA}  \\
+          y_i | \mu_i, \sigma_i, \tau  \sim  \mathcal{N}(y_i | \mu_i, \sigma_i^2/\tau)  \label{eq:BayesModelA}  \\
           %
             \mu_i = \beta + g(x_i)  \label{eq:BayesModelB}  \\
           %
@@ -282,7 +264,7 @@
     </section>
     <!--}}}-->
 
-    <!--{{{ LAT samples are discontinuous -->
+    <!--{{{ LAT samples are discontinuous
     <section>
         <h3>LAT maps: GMRF posterior samples</h3>
 
@@ -294,12 +276,10 @@
             <figcaption style="line-height: 0.75; font-size: 0.75em" >Mean is smooth but samples are rough</figcaption>
         </figure>
 
-        <!--
         <p>The samples do not look like valid activation patterns</p>
-        -->
 
     </section>
-    <!--}}}-->
+    }}}-->
 
     <!--{{{ Generalizing Gaussian processes on a manifold -->
     <section>
@@ -325,7 +305,24 @@
     </section>
     <!--}}}-->
 
-    <!--{{{ Laplacian eigenbasis -->
+    <!--{{{ LAT plots -->
+    <section>
+        <h3>Posterior distrib. of function + gradient</h3>
+
+        <center>
+        <video autoplay="true" loop="true" muted="true" width="420">
+           <source src="figures/LAT.mp4" type="video/mp4"> Your browser does not support the video tag.
+        </video>
+        <video autoplay="true" loop="true" muted="true" width="420">
+           <source src="figures/CV.mp4" type="video/mp4"> Your browser does not support the video tag.
+        </video>
+        <figcaption style="line-height: 1.0; font-size: 0.75em" >Posterior mean of LAT (left) and Conduction Velocity (right)</figcaption>
+        </center>
+
+    </section>
+    <!--}}}-->
+
+    <!--{{{ Laplacian eigenbasis
     <section>
         <h3>Laplacian eigenbasis</h3>
 
@@ -339,21 +336,20 @@
         </center>
 
     </section>
-    <!--}}}-->
+    }}}-->
 
-    <!--{{{ LAT plots -->
+    <!--{{{ ERP surrogate + Latent GPs -->
     <section>
-        <h3>Posterior distrib. of function + gradient</h3>
+        <h3>Latent Gaussian processes on atrial manifolds</h3>
 
-        <center>
-        <video autoplay="true" loop="true" muted="true" width="420">
-           <source src="figures/LAT.mp4" type="video/mp4"> Your browser does not support the video tag.
-        </video>
-        <video autoplay="true" loop="true" muted="true" width="420">
-           <source src="figures/CV.mp4" type="video/mp4"> Your browser does not support the video tag.
-        </video>
-        <figcaption style="line-height: 1.0; font-size: 0.75em" >Posterior mean of LAT (left) and CV (right)</figcaption>
-        </center>
+        <small>
+            Emulators + GP priors on parameters: simulation-free inference with UQ
+        </small>
+
+        <figure>
+            <img style="margin: 0; width: 45%; height: auto" src="figures/ERP_flowchart.png">
+            <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
+        </figure>
 
     </section>
     <!--}}}-->
@@ -505,13 +501,25 @@
     </section>
     <!--}}}-->
 
+    <!--{{{ RCWLS measures -->
+    <section>
+        <h3>RCWLS recovers expected kurtosis properties</h3>
+
+        <figure>
+            <img style="margin: 0; width: 30%; height: auto" src="figures/RCWLS_preview.png">
+            <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
+        </figure>
+
+    </section>
+    <!--}}}-->
+
     <!--{{{ optimal CDTI design -->
     <section>
-        <h3>Bias and Variance of CDTI parameter estimation</h3>
+        <h3>Bias and Variance of CDTI diffusion measures</h3>
 
         <figure>
             <img style="margin: 0; width: 40%; height: auto" src="figures/design_cdti.png">
-            <figcaption style="line-height: 1.0; font-size: 0.75em">Scan time relates to  acquistion design</figcaption>
+            <figcaption style="line-height: 1.0; font-size: 0.75em">What experimental design is best for a given scan time?</figcaption>
         </figure>
 
     </section>
@@ -519,7 +527,7 @@
 
     <!--{{{ UQ CDTI -->
     <section>
-        <h3>Subject specific Uncertainty Quantification</h3>
+        <h3>Uncertainty Maps of Diffusion Measures</h3>
 
         <figure>
             <img style="margin: 0; width: 85%; height: auto" src="figures/CDTI_UQ.png">
@@ -531,44 +539,16 @@
 
     <!--{{{ uncertainty weighted summary stats -->
     <section>
-        <h3>UQ in CDTI - improving specificity</h3>
+        <h3>Uncertainty Weighted Summary Statistics in CDTI</h3>
 
         <figure>
-            <img style="margin: 0; width: 40%; height: auto" src="figures/fa.png">
-            <img style="margin: 0; width: 40%; height: auto" src="figures/e2a.png">
-            <figcaption style="line-height: 1.0; font-size: 0.75em">Uncertainty Weighted Summary Statistics are better</figcaption>
+            <img style="margin: 0; width: 45%; height: auto" src="figures/fa.png">
+            <img style="margin: 0; width: 45%; height: auto" src="figures/e2a.png">
+            <figcaption style="line-height: 1.0; font-size: 0.75em">Uncertainty weighted group differences are larger (and p-values smaller)</figcaption>
         </figure>
 
     </section>
     <!--}}}-->
-
-</section>
-<!--}}}-->
-
-
-<!--{{{ Deep-learning -->
-<section>
-
-    <section>
-        <h2>Interest in Deep Learning</h2>
-
-        <small>
-        <p style='text-align: left'>Reviewed papers on Deep-Learning:</p>
-        <ul>
-            <li><a href="https://doi.org/10.1016/j.jocmr.2024.100984" target="_blank">Kiosk 9R-TC-06 - Accelerating DT-CMR with Deep Learning-based Tensor De-noising and Breath Hold Reduction</a></li>
-            <li><a href="https://doi.org/10.1088/1361-6560/ad6f6a" target="_blank">Deep learning method with integrated invertible wavelet scattering for improving the quality of in vivo cardiac DTI</a></li>
-            <li><a href="https://doi.org/10.1088/1361-6560/ac9a1f" target="_blank">An unsupervised convolutional neural network method for estimation of intravoxel incoherent motion parameters</a></li>
-        </ul>
-
-        <p style='text-align: left'>Journal clubs presentations:</p>
-        <ul>
-            <li><a href="https://doi.org/10.3390/app131910829" target="_blank">Node2Node: Self-Supervised Cardiac Diffusion Tensor Image Denoising Method</a></li>
-            <li><a href="https://doi.org/10.1016/j.compmedimag.2022.102075" target="_blank">Synthetically trained convolutional neural networks for improved tensor estimation from free-breathing cardiac DTI</a></li>
-            <li><a href="https://scmr.org/past-events" target="_blank">Artificial Intelligence in Cardiovascular Magnetic Resonance Imaging: A joint summit of EACVI and SCMR</a></li>
-        </ul>
-        </small>
-
-    </section>
 
 </section>
 <!--}}}-->
@@ -586,7 +566,6 @@
 
 </section>
 <!--}}}-->
-
 
 
 <!-- {{{ revealjs - settings after -->
