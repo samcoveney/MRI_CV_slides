@@ -370,6 +370,36 @@
     </section>
     <!--}}}-->
 
+    <!--{{{ My CDTI role -->
+    <section>
+        <h3>My CDTI roles</h3>
+
+        <p>I write CDTI post-processing tools for:</p>
+        <ul>
+            <li>Registration</li>
+            <li>Signal fitting</li>
+            <li>Segmentation GUI</li>
+            <li>etc...</li>
+        </ul>
+
+        <br></br>
+
+        <figure>
+            <img style="margin: 0; width: 80%; height: auto" src="figures/DiPy.png">
+            <figcaption style="line-height: 1.0; font-size: 0.75em">Also a contributor to the <a href="https://dipy.org/team.html">Diffusion Imaging in Python</a> project</figcaption>
+        </figure>
+
+        <!--
+        <div>
+        \[\begin{gather}
+          \hat{\theta} = \text{argmin} \sum_{i=1}^N \left( \frac{\sigma^2}{\left(\sigma^2 + r_i^2\right)^2} \right)^2 r_i^2
+        \end{gather}\]
+        </div>
+        -->
+
+    </section>
+    <!--}}}-->
+
     <!--{{{ DTI maths -->
     <section>
         <h3>Diffusion Tensor Imaging (DTI) maths</h3>
@@ -441,7 +471,7 @@
         <h3>Robust fitting for outlier detection</h3>
 
         <figure>
-            <img style="margin: 0; width: 60%; height: auto" src="figures/SR_miss.png">
+            <img style="margin: 0; width: 30%; height: auto" src="figures/outliers.png">
             <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
         </figure>
 
@@ -506,20 +536,8 @@
         <h3>RCWLS recovers expected kurtosis properties</h3>
 
         <figure>
-            <img style="margin: 0; width: 30%; height: auto" src="figures/RCWLS_preview.png">
+            <img style="margin: 0; width: 50%; height: auto" src="figures/RCWLS_preview.png">
             <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
-        </figure>
-
-    </section>
-    <!--}}}-->
-
-    <!--{{{ optimal CDTI design -->
-    <section>
-        <h3>Bias and Variance of CDTI diffusion measures</h3>
-
-        <figure>
-            <img style="margin: 0; width: 40%; height: auto" src="figures/design_cdti.png">
-            <figcaption style="line-height: 1.0; font-size: 0.75em">What experimental design is best for a given scan time?</figcaption>
         </figure>
 
     </section>
@@ -546,6 +564,37 @@
             <img style="margin: 0; width: 45%; height: auto" src="figures/e2a.png">
             <figcaption style="line-height: 1.0; font-size: 0.75em">Uncertainty weighted group differences are larger (and p-values smaller)</figcaption>
         </figure>
+
+    </section>
+    <!--}}}-->
+
+    <!--{{{ optimal CDTI design -->
+    <section>
+        <h3>Bias and Variance of CDTI diffusion measures</h3>
+
+        <center>
+        <figure>
+            <img style="margin: 0; width: 50%; height: auto" src="figures/CDTI_designs.jpg">
+            <img style="margin: 0; width: 45%; height: auto" src="figures/mean_fa.png">
+            <figcaption style="line-height: 1.0; font-size: 0.75em">What experimental design is best for a given scan time?</figcaption>
+        </figure>
+        </center>
+
+    </section>
+    <!--}}}-->
+
+    <!--{{{ ZOOM -->
+    <section>
+        <h3>ZOOM: ZOnally Oblique Multislice</h3>
+
+        <center>
+        <figure>
+            <img style="margin: 0; width: 50%; height: auto" src="figures/ZOOM_schematic.png">
+            <br></br>
+            <img style="margin: 0; width: 50%; height: auto" src="figures/ZOOM_parameters.png">
+            <figcaption style="line-height: 1.0; font-size: 0.75em">Optimize ZOOM parameters $\tau$ and $\alpha$ by building error surface</figcaption>
+        </figure>
+        </center>
 
     </section>
     <!--}}}-->
