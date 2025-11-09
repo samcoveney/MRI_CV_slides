@@ -86,6 +86,9 @@
 
         <p>Emulator (fast) $\approx$ Simulator (slow)</p>
 
+        <br></br>
+        <p><b>Relevance: parameter estimation; acquisition design</b></p>
+
     </section>
     <!--}}}-->
 
@@ -96,7 +99,7 @@
         <p>
             INPUTS: parameters; OUTPUTS: action potential
             <br>
-            Gaussian process emulators
+            Find most implausible features given real data
         </p>
            
         <figure>
@@ -115,7 +118,7 @@
         <p>
             INPUTS: parameters; OUTPUTS: restitution curves
             <br>
-            PCA + GPs: multi-output emulators
+            Model principle components to reduce dimensionality
         </p>
 
         <figure>
@@ -131,9 +134,9 @@
         <h3>Bayesian Calibration with emulators</h3>
 
         <p>
-            Inference with no extra simulations
+            Obtain posterior distribution of parameters given data
             <br>
-            Obtain posterior distribution of parameters
+            (without having to run more simulations)
         </p>
 
         <figure>
@@ -151,6 +154,8 @@
 
         <p>
             Investigate parameter identifiability with emulators
+            <br>
+            Improve parameter estimation with better data designs
         </p>
 
         <figure>
@@ -172,7 +177,28 @@
     <section>
         <h2>Random fields on Manifolds</h2>
 
-        <p>Mapping electrical activation in the left atrium</p>
+        <p>Modeling and interpolation on left atrial models</p>
+
+        <center>
+        <video autoplay="true" loop="true" muted="true" width="240">
+           <source src="figures/basis.mp4" type="video/mp4"> Your browser does not support the video tag.
+        </video>
+        </center>
+
+        <p><b>Relevance: maths + stats + coding</b></p>
+
+    </section>
+    <!--}}}-->
+
+    <!--{{{ EGMs + mesh: what we want-->
+    <section>
+
+        <h3>Probabilistic Interpolation on manifolds</h3>
+
+        <figure>
+            <img style="margin: 0; width: 50%; height: auto" src="figures/meshgif.gif">
+            <figcaption style="line-height: 1.0; font-size: 0.75em" >Infer posterior distribution of random field from data</figcaption>
+        </figure>
 
     </section>
     <!--}}}-->
@@ -201,20 +227,7 @@
     </section>
     <!--}}}-->
 
-    <!--{{{ EGMs + mesh: what we want-->
-    <section>
-
-        <h3>Probabilistic Interpolation on manifolds</h3>
-
-        <figure>
-            <img style="margin: 0; width: 50%; height: auto" src="figures/meshgif.gif">
-            <figcaption style="line-height: 1.0; font-size: 0.75em" >Infer posterior distribution of random field from data</figcaption>
-        </figure>
-
-    </section>
-    <!--}}}-->
-
-    <!--{{{ Bayesian model -->
+    <!--{{{ GMRF
     <section>
         <h3>Gaussian Markov Random Field</h3>
 
@@ -235,7 +248,6 @@
         \end{gather}\]
         </div>
 
-        <!--
         <br>
         <ul>
             <li>LAT <i>observations</i> are $y_i$</li>
@@ -246,10 +258,9 @@
         <small>
         <p>$g(\cdot)$ is the Gaussian Markov Random Field, defined at every vertex of the atrial mesh</p>
         </small>
-        -->
 
     </section>
-    <!--}}}-->
+    }}}-->
 
     <!--{{{ Bayesian model paper -->
     <section>
@@ -281,7 +292,7 @@
     </section>
     }}}-->
 
-    <!--{{{ Generalizing Gaussian processes on a manifold -->
+    <!--{{{ Generalizing Gaussian processes on a manifold
     <section>
         <h3>Generalizing Gaussian processes on manifolds</h3>
 
@@ -303,7 +314,7 @@
         </small>
 
     </section>
-    <!--}}}-->
+    }}}-->
 
     <!--{{{ LAT plots -->
     <section>
@@ -340,14 +351,16 @@
 
     <!--{{{ ERP surrogate + Latent GPs -->
     <section>
-        <h3>Latent Gaussian processes on atrial manifolds</h3>
+        <h3>Spatial priors for Bayesian parameter estimation</h3>
 
+        <!--
         <small>
             Emulators + GP priors on parameters: simulation-free inference with UQ
         </small>
+        -->
 
         <figure>
-            <img style="margin: 0; width: 45%; height: auto" src="figures/ERP_flowchart.png">
+            <img style="margin: 0; width: 50%; height: auto" src="figures/ERP_flowchart.png">
             <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
         </figure>
 
@@ -365,7 +378,14 @@
     <section>
         <h2>Cardiac diffusion tensor imaging</h2>
 
-        <p>Investigating cardiac tissue structure with MRI</p>
+        <p>Investigating cardiac tissue structure with CDTI</p>
+
+        <figure>
+            <img style="margin: 0; width: 20%; height: auto" src="figures/cdti_superquadrics.png">
+            <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
+        </figure>
+
+        <p><b>Relevance: MRI; analysis pipelines</b></p>
 
     </section>
     <!--}}}-->
@@ -374,15 +394,11 @@
     <section>
         <h3>My CDTI roles</h3>
 
-        <p>I write CDTI post-processing tools for:</p>
-        <ul>
-            <li>Registration</li>
-            <li>Signal fitting</li>
-            <li>Segmentation GUI</li>
-            <li>etc...</li>
-        </ul>
+        <p>I write post-processing tools (registration, fitting, etc.)</p>
 
-        <br></br>
+        <p>These tools are used by many people at Uni of Leeds.</p>
+
+        <br>
 
         <figure>
             <img style="margin: 0; width: 80%; height: auto" src="figures/DiPy.png">
@@ -404,7 +420,7 @@
     <section>
         <h3>Diffusion Tensor Imaging (DTI) maths</h3>
 
-        <p>Model measured (noisy) signal $y_i$ as:</p>
+        <p>Model observed signal $y_i$ as:</p>
 
         <div>
         \[\begin{gather}
@@ -431,11 +447,11 @@
 
     <!--{{{ superquadrics -->
     <section>
-        <h3>Tissue orientiation</h3>
+        <h3>Short-axis cardiac DTI</h3>
 
         <figure>
             <img style="margin: 0; width: 50%; height: auto" src="figures/cdti_superquadrics.png">
-            <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
+            <figcaption style="line-height: 1.0; font-size: 0.75em">Each glyph represents a tensor (color = helix angle)</figcaption>
         </figure>
 
     </section>
@@ -466,17 +482,17 @@
     </section>
     <!--}}}-->
 
-    <!--{{{ Shot rejection -->
+    <!--{{{ Shot rejection
     <section>
         <h3>Robust fitting for outlier detection</h3>
 
         <figure>
             <img style="margin: 0; width: 30%; height: auto" src="figures/outliers.png">
-            <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
+            <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption>
         </figure>
 
     </section>
-    <!--}}}-->
+    }}}-->
 
     <!--{{{ robust vs non-robust HA maps-->
     <section>
@@ -549,7 +565,7 @@
 
         <figure>
             <img style="margin: 0; width: 85%; height: auto" src="figures/CDTI_UQ.png">
-            <!-- <figcaption style="line-height: 1.0; font-size: 0.75em">ERP emulator + GPMI prior for parameter fields.</figcaption> -->
+            <figcaption style="line-height: 1.0; font-size: 0.75em">Diffusion measures (left) and their uncertainty (right)</figcaption>
         </figure>
 
     </section>
@@ -570,12 +586,12 @@
 
     <!--{{{ optimal CDTI design -->
     <section>
-        <h3>Bias and Variance of CDTI diffusion measures</h3>
+        <h3>Acquisition design for CDTI</h3>
 
         <center>
         <figure>
             <img style="margin: 0; width: 50%; height: auto" src="figures/CDTI_designs.jpg">
-            <img style="margin: 0; width: 45%; height: auto" src="figures/mean_fa.png">
+            <img style="margin: 0; width: 33%; height: auto" src="figures/mean_fa.png">
             <figcaption style="line-height: 1.0; font-size: 0.75em">What experimental design is best for a given scan time?</figcaption>
         </figure>
         </center>
@@ -585,7 +601,7 @@
 
     <!--{{{ ZOOM -->
     <section>
-        <h3>ZOOM: ZOnally Oblique Multislice</h3>
+        <h3>Optimal setup for ZOnally Oblique Multislice</h3>
 
         <center>
         <figure>
